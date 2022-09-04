@@ -1,4 +1,4 @@
-﻿using Application.Features.Brands.Rules;
+﻿using Application.Features.ProgrammingLanguages.Rules;
 using Core.Application.Pipelines.Validation;
 using FluentValidation;
 using MediatR;
@@ -20,15 +20,11 @@ namespace Application
             services.AddAutoMapper(Assembly.GetExecutingAssembly());
             services.AddMediatR(Assembly.GetExecutingAssembly());
 
-            services.AddScoped<BrandBusinessRules>();
+            services.AddScoped<ProgramminLanguageBusinessRules>();
 
             services.AddValidatorsFromAssembly(Assembly.GetExecutingAssembly());
-            //services.AddTransient(typeof(IPipelineBehavior<,>), typeof(AuthorizationBehavior<,>));
-            //services.AddTransient(typeof(IPipelineBehavior<,>), typeof(CachingBehavior<,>));
-            //services.AddTransient(typeof(IPipelineBehavior<,>), typeof(CacheRemovingBehavior<,>));
-            //services.AddTransient(typeof(IPipelineBehavior<,>), typeof(LoggingBehavior<,>));
             services.AddTransient(typeof(IPipelineBehavior<,>), typeof(RequestValidationBehavior<,>));
-
+                
             return services;
 
         }

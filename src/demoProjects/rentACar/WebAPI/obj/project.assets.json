@@ -2176,8 +2176,9 @@
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
           "Application": "1.0.0",
+          "Core.Application": "1.0.0",
           "Domain": "1.0.0",
-          "Microsoft.EntityFrameworkCore": "6.0.1",
+          "Microsoft.EntityFrameworkCore": "6.0.8",
           "Microsoft.EntityFrameworkCore.SqlServer": "6.0.1",
           "Microsoft.Extensions.Configuration.Abstractions": "6.0.0"
         },
@@ -6333,6 +6334,7 @@
   },
   "projectFileDependencyGroups": {
     "net6.0": [
+      "AutoMapper.Extensions.Microsoft.DependencyInjection >= 11.0.0",
       "MediatR >= 10.0.1",
       "Microsoft.EntityFrameworkCore.Design >= 6.0.8",
       "Microsoft.EntityFrameworkCore.SqlServer >= 6.0.8",
@@ -6385,6 +6387,10 @@
       "net6.0": {
         "targetAlias": "net6.0",
         "dependencies": {
+          "AutoMapper.Extensions.Microsoft.DependencyInjection": {
+            "target": "Package",
+            "version": "[11.0.0, )"
+          },
           "MediatR": {
             "target": "Package",
             "version": "[10.0.1, )"
