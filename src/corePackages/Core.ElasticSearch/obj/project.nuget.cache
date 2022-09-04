@@ -1,0 +1,20 @@
+{
+  "version": 2,
+  "dgSpecHash": "wywpayS9p+e6TKE4iaTYErFw8KISBJ2bep9/aMScgRA39VciHQlqiz9yCJlu3B9OrgDPSPFd01STQNv7Amhrgw==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\googl\\source\\repos\\Kodlomaio.Devs\\src\\corePackages\\Core.ElasticSearch\\Core.ElasticSearch.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\googl\\.nuget\\packages\\elasticsearch.net\\7.17.0\\elasticsearch.net.7.17.0.nupkg.sha512",
+    "C:\\Users\\googl\\.nuget\\packages\\microsoft.csharp\\4.6.0\\microsoft.csharp.4.6.0.nupkg.sha512",
+    "C:\\Users\\googl\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\6.0.0\\microsoft.extensions.configuration.abstractions.6.0.0.nupkg.sha512",
+    "C:\\Users\\googl\\.nuget\\packages\\microsoft.extensions.configuration.binder\\6.0.0\\microsoft.extensions.configuration.binder.6.0.0.nupkg.sha512",
+    "C:\\Users\\googl\\.nuget\\packages\\microsoft.extensions.primitives\\6.0.0\\microsoft.extensions.primitives.6.0.0.nupkg.sha512",
+    "C:\\Users\\googl\\.nuget\\packages\\nest\\7.17.0\\nest.7.17.0.nupkg.sha512",
+    "C:\\Users\\googl\\.nuget\\packages\\nest.jsonnetserializer\\7.17.0\\nest.jsonnetserializer.7.17.0.nupkg.sha512",
+    "C:\\Users\\googl\\.nuget\\packages\\newtonsoft.json\\12.0.1\\newtonsoft.json.12.0.1.nupkg.sha512",
+    "C:\\Users\\googl\\.nuget\\packages\\system.buffers\\4.5.1\\system.buffers.4.5.1.nupkg.sha512",
+    "C:\\Users\\googl\\.nuget\\packages\\system.diagnostics.diagnosticsource\\5.0.0\\system.diagnostics.diagnosticsource.5.0.0.nupkg.sha512",
+    "C:\\Users\\googl\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\6.0.0\\system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}

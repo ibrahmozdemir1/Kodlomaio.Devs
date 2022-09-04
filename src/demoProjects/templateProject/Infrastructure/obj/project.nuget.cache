@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "XV+VhmZ4dz6Qd+RKxxNYN3CucmuOemxeqbpBlHTRrJAbZtAb1o1OutVdnIAorweug4FFKNX98uB9eWo2n43hGA==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\googl\\source\\repos\\Kodloma.io.Devs\\src\\demoProjects\\templateProject\\Infrastructure\\Infrastructure.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\googl\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\6.0.0\\microsoft.extensions.dependencyinjection.abstractions.6.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}
