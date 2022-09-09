@@ -1,8 +1,16 @@
 {
   "ExpandedNodes": [
     "",
-    "\\src"
+    "\\src",
+    "\\src\\demoProjects",
+    "\\src\\demoProjects\\rentACar",
+    "\\src\\demoProjects\\rentACar\\Application",
+    "\\src\\demoProjects\\rentACar\\Application\\Features",
+    "\\src\\demoProjects\\rentACar\\Application\\Features\\ProgrammingLanguages",
+    "\\src\\demoProjects\\rentACar\\Application\\Features\\ProgrammingLanguages\\Queries",
+    "\\src\\demoProjects\\rentACar\\Persistence",
+    "\\src\\demoProjects\\rentACar\\Persistence\\Contexts"
   ],
-  "SelectedNode": "\\Kodlamaio.Devs.sln",
+  "SelectedNode": "\\src\\demoProjects\\rentACar\\Persistence\\Contexts\\BaseDbContext.cs",
   "PreviewInSolutionExplorer": false
 }
