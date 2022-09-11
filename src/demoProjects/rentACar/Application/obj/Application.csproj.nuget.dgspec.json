@@ -422,6 +422,9 @@
             "projectReferences": {
               "C:\\Users\\googl\\source\\repos\\Kodlomaio.Devs\\src\\corePackages\\Core.Persistence\\Core.Persistence.csproj": {
                 "projectPath": "C:\\Users\\googl\\source\\repos\\Kodlomaio.Devs\\src\\corePackages\\Core.Persistence\\Core.Persistence.csproj"
+              },
+              "C:\\Users\\googl\\source\\repos\\Kodlomaio.Devs\\src\\corePackages\\Core.Security\\Core.Security.csproj": {
+                "projectPath": "C:\\Users\\googl\\source\\repos\\Kodlomaio.Devs\\src\\corePackages\\Core.Security\\Core.Security.csproj"
               }
             }
           }

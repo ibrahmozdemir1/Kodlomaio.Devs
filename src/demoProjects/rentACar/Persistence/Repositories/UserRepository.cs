@@ -1,6 +1,7 @@
 ﻿using Application.Services.Repositories;
 using Core.Persistence.Repositories;
 using Core.Security.Entities;
+using Domain.Entities;
 using Persistence.Contexts;
 using Persistence.Migrations;
 using System;
@@ -11,7 +12,7 @@ using System.Threading.Tasks;
 
 namespace Persistence.Repositories
 {
-    public class UserRepository : EfRepositoryBase<User, BaseDbContext>, IUserRepository
+    public class UserRepository : EfRepositoryBase<UserApplication, BaseDbContext>, IUserRepository
     {
         public UserRepository(BaseDbContext context) : base(context)
         {

@@ -6,6 +6,7 @@ using Core.Security.Dtos;
 using Core.Security.Entities;
 using Core.Security.Hashing;
 using Core.Security.JWT;
+using Domain.Entities;
 using MediatR;
 
 
@@ -33,12 +34,12 @@ namespace Application.Features.Users.Command.UserRegisterCommand
                 await _userBusinessRules.UserEmailCanNotBeDuplicated(request.UserForRegisterDto.Email);
                 HashingHelper.CreatePasswordHash(request.UserForRegisterDto.Password, out var passwordHash, out var passwordSalt);
 
-                User user = _mapper.Map<User>(request);
+                UserApplication user = _mapper.Map<UserApplication>(request);
                 user.Status = true;
                 user.PasswordHash = passwordHash;
                 user.PasswordSalt = passwordSalt;
 
-                User createdUser = await _userRepository.AddAsync(user);
+                UserApplication createdUser = await _userRepository.AddAsync(user);
 
                 AccessToken createdAccessToken = _tokenHelper.CreateToken(user, new List<OperationClaim>());
 

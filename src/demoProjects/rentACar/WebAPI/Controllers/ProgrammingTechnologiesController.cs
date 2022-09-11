@@ -5,6 +5,11 @@ using Application.Features.ProgrammingTechnologies.Command.CreateProgrammingTehc
 using Application.Features.ProgrammingTechnologies.Command.DeleteProgrammingTechnologies;
 using Application.Features.ProgrammingTechnologies.Command.UpdateProgrammingTechnologies;
 using Application.Features.ProgrammingTechnologies.Dtos;
+using Application.Features.ProgrammingTechnologies.Models;
+using Application.Features.ProgrammingTechnologies.Queries;
+using Application.Features.UserSocialMedias.Models;
+using Application.Features.UserSocialMedias.Queries.GetListUserSocialMedia;
+using Core.Application.Requests;
 using Microsoft.AspNetCore.Mvc;
 
 namespace WebAPI.Controllers
@@ -35,10 +40,11 @@ namespace WebAPI.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> GetListProgrammingTechnologies([FromQuery] DeleteProgrammingTechnologiesCommand deleteProgrammingTechnologiesCommand)
+        public async Task<IActionResult> GetListProgrammingTechnologies([FromQuery] PageRequest pageRequest)
         {
-            DeleteProgrammingTechnologiesDto result = await Mediator.Send(deleteProgrammingTechnologiesCommand);
-            return Created("", result);
+            GetListProgrammingTechnologiesQuery result = new() { PageRequest = pageRequest };
+            GetListProgrammingTechnologiesModel getListProgrammingTechnologiesModel = await Mediator.Send(result);
+            return Ok(getListProgrammingTechnologiesModel);
         }
     }
 }

@@ -1,5 +1,6 @@
 ﻿using Core.Persistence.Repositories;
 using Core.Security.Entities;
+using Domain.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Application.Services.Repositories
 {
-    public interface IUserRepository : IAsyncRepository<User>
+    public interface IUserRepository : IAsyncRepository<UserApplication>
     {
 
     }

@@ -6,11 +6,11 @@
     "\\src\\demoProjects\\rentACar",
     "\\src\\demoProjects\\rentACar\\Application",
     "\\src\\demoProjects\\rentACar\\Application\\Features",
-    "\\src\\demoProjects\\rentACar\\Application\\Features\\ProgrammingLanguages",
-    "\\src\\demoProjects\\rentACar\\Application\\Features\\ProgrammingLanguages\\Queries",
+    "\\src\\demoProjects\\rentACar\\Application\\Features\\ProgrammingTechnologies",
+    "\\src\\demoProjects\\rentACar\\Application\\Features\\ProgrammingTechnologies\\Rules",
     "\\src\\demoProjects\\rentACar\\Persistence",
     "\\src\\demoProjects\\rentACar\\Persistence\\Contexts"
   ],
-  "SelectedNode": "\\src\\demoProjects\\rentACar\\Persistence\\Contexts\\BaseDbContext.cs",
+  "SelectedNode": "\\src\\demoProjects\\rentACar\\Application\\Features\\ProgrammingTechnologies\\Rules\\ProgrammingTechnologiesBusinessRules.cs",
   "PreviewInSolutionExplorer": false
 }

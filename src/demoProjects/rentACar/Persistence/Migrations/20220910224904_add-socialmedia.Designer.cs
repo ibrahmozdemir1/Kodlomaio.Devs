@@ -12,8 +12,8 @@ using Persistence.Contexts;
 namespace Persistence.Migrations
 {
     [DbContext(typeof(BaseDbContext))]
-    [Migration("20220909170809_add-users")]
-    partial class addusers
+    [Migration("20220910224904_add-socialmedia")]
+    partial class addsocialmedia
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -96,6 +96,10 @@ namespace Persistence.Migrations
                     b.Property<int>("AuthenticatorType")
                         .HasColumnType("int");
 
+                    b.Property<string>("Discriminator")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("Email")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -121,7 +125,9 @@ namespace Persistence.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Users");
+                    b.ToTable("User");
+
+                    b.HasDiscriminator<string>("Discriminator").HasValue("User");
                 });
 
             modelBuilder.Entity("Core.Security.Entities.UserOperationClaim", b =>
@@ -212,6 +218,37 @@ namespace Persistence.Migrations
                         });
                 });
 
+            modelBuilder.Entity("Domain.Entities.UserSocialMedia", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasColumnName("Id");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<int>("GitHubLink")
+                        .HasColumnType("int")
+                        .HasColumnName("GitHubLink");
+
+                    b.Property<int>("UserId")
+                        .HasColumnType("int")
+                        .HasColumnName("UserId");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("UserSocialMedias", (string)null);
+                });
+
+            modelBuilder.Entity("Domain.Entities.UserApplication", b =>
+                {
+                    b.HasBaseType("Core.Security.Entities.User");
+
+                    b.HasDiscriminator().HasValue("UserApplication");
+                });
+
             modelBuilder.Entity("Core.Security.Entities.RefreshToken", b =>
                 {
                     b.HasOne("Core.Security.Entities.User", "User")
@@ -253,6 +290,17 @@ namespace Persistence.Migrations
                     b.Navigation("ProgrammingLanguage");
                 });
 
+            modelBuilder.Entity("Domain.Entities.UserSocialMedia", b =>
+                {
+                    b.HasOne("Domain.Entities.UserApplication", "User")
+                        .WithMany("UserSocialMedias")
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("User");
+                });
+
             modelBuilder.Entity("Core.Security.Entities.User", b =>
                 {
                     b.Navigation("RefreshTokens");
@@ -263,6 +311,11 @@ namespace Persistence.Migrations
             modelBuilder.Entity("Domain.Entities.ProgrammingLanguage", b =>
                 {
                     b.Navigation("ProgrammingTehcnologiess");
+                });
+
+            modelBuilder.Entity("Domain.Entities.UserApplication", b =>
+                {
+                    b.Navigation("UserSocialMedias");
                 });
 #pragma warning restore 612, 618
         }

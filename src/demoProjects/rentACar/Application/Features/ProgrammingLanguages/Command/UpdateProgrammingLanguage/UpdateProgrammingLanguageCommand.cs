@@ -24,9 +24,9 @@ namespace Application.Features.ProgrammingLanguages.Command.UpdateProgrammingLan
         {
             private readonly IProgrammingLanguageRepository _programmingLanguageRepository;
             private readonly IMapper _mapper;
-            private readonly ProgramminLanguageBusinessRules _programminLanguageBusinessRules;
+            private readonly ProgrammingLanguageBusinessRules _programminLanguageBusinessRules;
 
-            public UpdateProgrammingLanguageCommandHandler(IProgrammingLanguageRepository programmingLanguageRepository, IMapper mapper, ProgramminLanguageBusinessRules programminLanguageBusinessRules)
+            public UpdateProgrammingLanguageCommandHandler(IProgrammingLanguageRepository programmingLanguageRepository, IMapper mapper, ProgrammingLanguageBusinessRules programminLanguageBusinessRules)
             {
                 _programmingLanguageRepository = programmingLanguageRepository;
                 _mapper = mapper;

@@ -10,13 +10,19 @@ using System.Threading.Tasks;
 
 namespace Application.Features.ProgrammingLanguages.Rules
 {
-    public class ProgramminLanguageBusinessRules
+    public class ProgrammingLanguageBusinessRules
     {
         private readonly IProgrammingLanguageRepository _programmingLanguageRepository;
 
-        public ProgramminLanguageBusinessRules(IProgrammingLanguageRepository programmingLanguageRepository)
+        public ProgrammingLanguageBusinessRules(IProgrammingLanguageRepository programmingLanguageRepository)
         {
             this._programmingLanguageRepository = programmingLanguageRepository;
+        }
+
+        public async Task ProgrammingLanguageIDCannotBeDuplicated(int id)
+        {
+            ProgrammingLanguage result = await _programmingLanguageRepository.GetAsync(p => p.Id == id);
+            if (result == null) throw new BusinessException("Programming Language ID Not be empty.");
         }
 
         public async Task ProgrammingLanguageNameCanNotBeDuplicatedWhenInserted(string name)

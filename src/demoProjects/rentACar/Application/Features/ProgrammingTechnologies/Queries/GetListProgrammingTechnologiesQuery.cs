@@ -36,7 +36,7 @@ namespace Application.Features.ProgrammingTechnologies.Queries
                     _programmingTechnologiesRepository.GetListAsync(include: m => m.Include(c => c.ProgrammingLanguage),
                                                                     index: request.PageRequest.Page,
                                                                     size: request.PageRequest.PageSize);
-                GetListProgrammingTechnologiesModel getListProgrammingTechnologiesModel = _mapper.Map<Models.GetListProgrammingTechnologiesModel>(programmingTechnologies);
+                GetListProgrammingTechnologiesModel getListProgrammingTechnologiesModel = _mapper.Map<GetListProgrammingTechnologiesModel>(programmingTechnologies);
                 return getListProgrammingTechnologiesModel;
             }
         }

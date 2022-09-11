@@ -10,6 +10,6 @@ namespace Application.Features.ProgrammingTechnologies.Models
 {
     public class GetListProgrammingTechnologiesModel : BasePageableModel
     {
-        public IList<GetListProgrammingTechnologiesModel> Items { get; set; }
+        public List<GetListProgrammingTechnologiesDto> Items { get; set; }
     }
 }

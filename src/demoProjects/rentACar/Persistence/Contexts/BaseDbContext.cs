@@ -15,9 +15,10 @@ namespace Persistence.Contexts
         protected IConfiguration Configuration { get; set; }
         public DbSet<ProgrammingLanguage> ProgrammingLanguages { get; set; }
         public DbSet<ProgrammingTehcnologies> ProgrammingTehcnologiess { get; set; }
-        public DbSet<User> Users { get; set; }
+        public DbSet<UserApplication> Users { get; set; }
         public DbSet<UserOperationClaim> UserOperationClaims { get; set; }
         public DbSet<OperationClaim> OperationClaims { get; set; }
+        public DbSet<UserSocialMedia> UserSocialMedias { get; set; }
 
 
 
@@ -53,6 +54,16 @@ namespace Persistence.Contexts
                 a.Property(p => p.ProgrammingLanguageId).HasColumnName("ProgrammingLanguageId");
 
                 a.HasOne(p => p.ProgrammingLanguage);
+            });
+
+            modelBuilder.Entity<UserSocialMedia>(a =>
+            {
+                a.ToTable("UserSocialMedias").HasKey(k => k.Id);
+                a.Property(p => p.Id).HasColumnName("Id");
+                a.Property(p => p.GitHubLink).HasColumnName("GitHubLink");
+                a.Property(p => p.UserId).HasColumnName("UserId");
+
+                a.HasOne(p => p.User);
             });
 
             ProgrammingTehcnologies[] programmingTechonologiesEntitySeeds = { 

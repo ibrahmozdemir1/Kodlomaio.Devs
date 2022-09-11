@@ -5,6 +5,7 @@ using AutoMapper;
 using Core.Security.Dtos;
 using Core.Security.Entities;
 using Core.Security.JWT;
+using Domain.Entities;
 using MediatR;
 using System;
 using System.Collections.Generic;
@@ -33,7 +34,7 @@ namespace Application.Features.Users.Command.UserLoginCommand
 
             public async Task<UserLoginAndRegisterDto> Handle(UserLoginCommand request, CancellationToken cancellationToken)
             {
-                User? user = await _userRepository.GetAsync(u => u.Email == request.UserForLoginDto.Email);
+                UserApplication? user = await _userRepository.GetAsync(u => u.Email == request.UserForLoginDto.Email);
 
                 _userbusinessRules.UserShouldExistWhenRequested(user);
 
